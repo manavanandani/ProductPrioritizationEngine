@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "product-prioritization-engine"
+version = "1.0.0"
+description = "Data-driven feature scoring model calibrating RICE against human PM intuition"
+authors = [{ name = "Manav Anandani", email = "anandanimr@rknec.edu" }]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0.0",
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "pandas>=1.5.0",
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+prioritize = "src.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
