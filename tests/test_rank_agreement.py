@@ -20,8 +20,9 @@ def test_perfect_and_inverse_agreement():
 
 
 def test_catalog_pm_benchmark_agreement():
-    catalog_path = Path("data/features_catalog.json")
-    baselines_path = Path("data/pm_baselines.json")
+    base_dir = Path(__file__).resolve().parent.parent
+    catalog_path = base_dir / "data" / "features_catalog.json"
+    baselines_path = base_dir / "data" / "pm_baselines.json"
 
     with open(catalog_path) as f:
         features_data = json.load(f)
